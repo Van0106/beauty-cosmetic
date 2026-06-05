@@ -11,9 +11,8 @@ body{
     font-family: 'Montserrat', sans-serif;
     background: #FFF9FA;
     color: #3B3B3B;
-    overflow: visible;
+    overflow-x: hidden;
 }
-
 
 .container{
     width: 100%;
@@ -152,8 +151,8 @@ body{
 }
 
 .footer{
-    width:100vw;
-    margin-left:calc(-50vw + 50%);
+    width:100%;
+    margin-left:0;
     background:#FFFFFF;
     padding:45px 0 15px;
     margin-top:60px;
@@ -384,6 +383,6 @@ a:hover {
         padding: 0 10px;
     }
 }
-*{
-    outline:1px solid red;
+html{
+    overflow-x:hidden;
 }
