@@ -1,152 +1,200 @@
-.order-page{
-    width:90%;
-    max-width:1000px;
-    margin:60px auto;
+/* 1. TỔNG THỂ TRANG & KHUNG BAO NGOÀI  */
+.order-page {
+    padding: 60px 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff !important; 
+}
+/* Tiêu đề chính dùng màu hồng đậm chuẩn thương hiệu */
+.order-title {
+    text-align: center;
+    color: #E85D8E; 
+    font-weight: 700;
+    margin-bottom: 40px;
+    font-size: 36px;
 }
 
-
-.order-title{
-    text-align:center;
-    color:#e85d8a;
-    margin-bottom:50px;
-    font-size:32px;
-    font-weight:650;
+/* KHUNG BÊN NGOÀI
+.order-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+    background: white;               
+    border-radius: 20px;             
+    border: 1px solid #F1D7DF;       
+    box-shadow: 0 4px 15px rgba(241, 215, 223, 0.2);
 }
 
-
-.order-box{
-    background:#fff;
-    border-radius:20px;
-    padding:40px;
-    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+/* 2. CỤM TÌM KIẾM  */
+.search-order label {
+    display: block;
+    font-weight: 600;
+    color: #3B3B3B;
+    margin-bottom: 15px;
+    font-size: 16px;
 }
 
-
-.search-order label{
-    display:block;
-    margin-bottom:14px;
-    font-size:18px;
-    font-weight:500;
-    color:#333;
+.search-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
-
-.search-group{
-    display:flex;
-    gap:15px;
+/* Ô NHẬP LIỆU*/
+.search-group input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 1px solid #F1D7DF;       
+    border-radius: 8px;              
+    outline: none;
+    background-color: #ffffff;       
+    color: #3B3B3B;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
 }
 
-
-.search-group input{
-    flex:1;
-    padding:15px;
-    border:1px solid #ddd;
-    border-radius:10px;
+/* Khi bấm chọn vào ô nhập liệu (Focus) */
+.search-group input:focus {
+    border-color: #F28BA8;
+    box-shadow: 0 0 5px rgba(242, 139, 168, 0.3);
 }
 
-
-.search-group button{
-    border:none;
-    background:#f19abb;
-    color:#fff;
-    padding:15px 35px;
-    border-radius:14px;
-    cursor:pointer;
-    transition:0.3s;
+/* NÚT KIỂM TRA: Đồng bộ màu sắc #F28BA8 và hiệu ứng hover từ trang chủ */
+.btn-kiem-tra-chuan {
+    padding: 12px 32px;
+    background-color: #F28BA8;       
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;   
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(242, 139, 168, 0.4); /* Đổ bóng mờ mịn */
+    transition: all 0.2s ease;
 }
 
-
-.search-group button:hover{
-    background:#e88bab;
+/* Di chuột vào -> Màu hồng đậm hơn của trang chủ */
+.btn-kiem-tra-chuan:hover {
+    background-color: #E85D8E;       
+    box-shadow: 0 6px 16px rgba(232, 93, 142, 0.5);
 }
 
-
-.order-result{
-    margin-top:40px;
+/*  Ấn giữ nút -> Đổi sang một tone hồng sậm hẳn cực mượt */
+.btn-kiem-tra-chuan:active {
+    background-color: #c54673; 
+    box-shadow: 0 2px 6px rgba(242, 139, 168, 0.3);
+    transform: translateY(1px);     
 }
 
-
-/* TIMELINE */
-.progress{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    margin:45px 0;
+/* 3. KHUNG HIỂN THỊ KẾT QUẢ ĐƠN HÀNG (Giữ nguyên cấu trúc xịn của bạn) */
+.order-result {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #fff5f7;       
+    border: 1px solid #F1D7DF;
+    border-radius: 15px;
 }
 
-
-.step{
-    flex:1;
-    text-align:center;
-    position:relative;
+.order-result h3 {
+    color: #3B3B3B;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-
-/* ĐƯỜNG NỐI */
-.step::after{
-    content:"";
-    position:absolute;
-    top:20px;
-    left:50%;
-    width:100%;
-    height:2px;
-    background:#f3e3ea;
-    z-index:0;
+/* Thanh tiến trình */
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
 }
 
-
-.step:last-child::after{
-    display:none;
+.progress-line {
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: #FFE2EA;            
+    z-index: 1;
 }
 
-
-/* NÚT 1 2 3 4 */
-.circle{
-    width:34px;
-    height:34px;
-    border-radius:50%;
-    background:#f9edf2;
-    color:#c98ca2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:auto;
-    font-size:15px;
-    font-weight:500;
-    position:relative;
-    z-index:2;
-    border:1px solid #f5dbe4;
+.step {
+    flex: 1;
+    text-align: center;
+    z-index: 2;
 }
 
-
-/* STEP ĐANG ACTIVE */
-.step.active .circle{
-    background:#e88bab;
-    color:#fff;
-    border:none;
+.circle {
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border: 2px solid #F1D7DF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    font-weight: bold;
+    color: #B5B5B5;
+    transition: all 0.3s ease;
 }
 
-
-/* TEXT */
-.step p{
-    margin-top:12px;
-    font-size:17px;
-    font-weight:400;
-    color:#555;
+.step p {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+    font-weight: 600;
 }
 
-
-/* TEXT ACTIVE */
-.step.active p{
-    color:#d66f97;
-    font-weight:500;
+/* Khi bước đó ĐÃ KÍCH HOẠT */
+.step.active .circle {
+    background-color: #F28BA8;
+    border-color: #F28BA8;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(242, 139, 168, 0.5);
 }
 
-
-.order-info{
-    margin-top:35px;
-    line-height:1.9;
-    font-size:17px;
-    color:#444;
+.step.active p {
+    color: #E85D8E;
 }
 
+/* Card thông tin chi tiết đơn hàng */
+.order-info-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #F1D7DF;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #fff5f7;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row span {
+    color: #777;
+    font-weight: 500;
+}
+
+.info-row strong {
+    color: #3B3B3B;
+    font-weight: 600;
+}
+
+/* Giá tiền màu hồng to nổi bật */
+.price {
+    color: #E85D8E !important;
+    font-size: 18px;
+    font-weight: 700 !important;
+}
