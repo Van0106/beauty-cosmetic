@@ -1,0 +1,271 @@
+body{
+    background:#fff7fa;
+    font-family:'Montserrat',sans-serif;
+}
+
+:root{
+    --main-color:#e85d8a;
+}
+
+/* =========================
+LAYOUT
+========================= */
+
+.checkout-container{
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+}
+
+.checkout-left{
+    flex:2;
+}
+
+.checkout-right{
+    width:420px;
+    flex-shrink:0;
+}
+
+@media(max-width:992px){
+
+    .checkout-container{
+        flex-direction:column;
+    }
+
+    .checkout-right{
+        width:100%;
+    }
+
+}
+
+/* =========================
+BOX
+========================= */
+
+.checkout-box,
+.order-summary{
+    background:#fff;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.checkout-title{
+    color:#e85d8a;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+/* =========================
+FORM
+========================= */
+
+input,
+select,
+textarea{
+    border-radius:10px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#e85d8a !important;
+    box-shadow:0 0 0 .2rem rgba(255,92,147,.15) !important;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#e85d8a;
+}
+
+/* =========================
+ĐƠN HÀNG
+========================= */
+
+.checkout-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.checkout-item:last-child{
+    border-bottom:none;
+}
+
+.checkout-item img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.checkout-item div{
+    flex:1;
+}
+
+.checkout-item p{
+    margin:0;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.checkout-item p:first-child{
+    font-weight:600;
+    color:#333;
+    margin-bottom:5px;
+}
+
+.checkout-item strong{
+    color:#e85d8a;
+    font-size:15px;
+    white-space:nowrap;
+}
+
+/* =========================
+TỔNG TIỀN
+========================= */
+
+.total-box{
+    margin-top:20px;
+    background:#fff1f6;
+    border:1px solid #ffd4e2;
+    border-radius:12px;
+    padding:15px;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.summary-row span{
+    font-size:15px;
+    color:#555;
+}
+
+.summary-row strong{
+    color:#e85d8a;
+    font-size:20px;
+    font-weight:700;
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.btn-order {
+    width: 100%;             /* Giữ nguyên 100% để lấp đầy khung đơn hàng bên phải */
+    height: 55px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 12px;
+
+    /* Trạng thái bình thường: Màu hồng nhạt */
+    background: #f48fb1;
+    color: #fff;
+
+    /* Font chữ */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    
+    cursor: pointer;
+    transition: 0.2s;
+
+    /* Đổ bóng nhẹ lúc bình thường */
+    box-shadow: 0 4px 10px rgba(244, 166, 193, 0.2);
+}
+
+/* Khi di chuột qua (Hover): Nẩy nhẹ lên và đổi màu nền */
+.btn-order:hover {
+    background: #f17da4; 
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(244, 166, 193, 0.25);
+}
+
+/* KHI ẤN VÀO (Active): Chuyển sang hồng đậm hẳn và lún nút xuống khi click */
+.btn-order:active {
+    background: #e85d8a !important; /* Đổi thành hồng đậm chuẩn */
+    transform: translateY(-1px);     /* Hiệu ứng lún nút */
+    box-shadow: 0 4px 8px rgba(232, 93, 138, 0.3);
+}
+
+/* =========================
+RESPONSIVE MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .checkout-box,
+    .order-summary{
+        padding:20px;
+    }
+
+    .checkout-title{
+        font-size:20px;
+    }
+
+    .checkout-item img{
+        width:65px;
+        height:65px;
+    }
+
+}
+/* =========================
+PHƯƠNG THỨC THANH TOÁN
+========================= */
+
+.payment-method{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.payment-option{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 16px;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.payment-option:hover{
+    border-color:#e85d8a;
+    background:#fff4f8;
+}
+
+.payment-option input{
+    accent-color:#e85d8a;
+    width:18px;
+    height:18px;
+}
+
+.payment-option span{
+    font-size:15px;
+    color:#444;
+}
+
+.payment-box{
+    margin-top:15px;
+    padding:15px;
+    background:#fff4f8;
+    border:1px solid #ffd4e2;
+    border-radius:12px;
+}
+
+.payment-box h6{
+    color:#e85d8a;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.payment-box p{
+    margin-bottom:6px;
+}

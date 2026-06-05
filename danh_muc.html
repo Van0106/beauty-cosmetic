@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>
+Danh mục sản phẩm
+</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="danh_muc.css">
+
+    <!-- Boxicons (footer) -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="header"></div>
+<!-- BANNER -->
+
+<section class="promo-banner">
+
+<img
+src="images/banner danh mục.png"
+alt="Danh mục">
+
+</section>
+
+<div class="products">
+<div class="product-layout">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h3>DANH MỤC</h3>
+
+<div class="filter">
+
+<label>
+<input class="category" value="chamsocda" type="checkbox">
+Chăm sóc da
+</label>
+
+<label>
+<input class="category" value="trangdiem" type="checkbox">
+Trang điểm
+</label>
+
+<label>
+<input class="category" value="chongnang" type="checkbox">
+Chống nắng
+</label>
+
+<label>
+<input class="category" value="chamsoctoc" type="checkbox">
+Chăm sóc tóc
+</label>
+
+</div>
+
+<h3>THƯƠNG HIỆU</h3>
+
+<div class="filter filter-brand" id="brandFilter">
+
+<label><input class="brand" type="checkbox" value="clio"> Clio</label>
+
+<label><input class="brand" type="checkbox" value="laneige"> Laneige</label>
+
+<label><input class="brand" type="checkbox" value="la roche-posay"> La Roche-Posay</label>
+
+<label><input class="brand" type="checkbox" value="some by mi"> Some By Mi</label>
+
+<label><input class="brand" type="checkbox" value="the ordinary"> The Ordinary</label>
+
+<label><input class="brand" type="checkbox" value="l'oréal paris"> L'Oréal Paris</label>
+
+<label><input class="brand" type="checkbox" value="dove"> Dove</label>
+
+<label><input class="brand" type="checkbox" value="tsubaki"> Tsubaki</label>
+
+<label><input class="brand" type="checkbox" value="clinique"> Clinique</label>
+
+<label><input class="brand" type="checkbox" value="the saem"> The Saem</label>
+
+<label><input class="brand" type="checkbox" value="anessa"> Anessa</label>
+
+<label><input class="brand" type="checkbox" value="bioderma"> Bioderma</label>
+
+<label><input class="brand" type="checkbox" value="biore"> Biore</label>
+
+<label><input class="brand" type="checkbox" value="innisfree"> Innisfree</label>
+
+<label><input class="brand" type="checkbox" value="skin aqua"> Skin Aqua</label>
+
+<label><input class="brand" type="checkbox" value="kiehl's"> Kiehl's</label>
+
+<label><input class="brand" type="checkbox" value="vichy"> Vichy</label>
+
+<label><input class="brand" type="checkbox" value="dior"> Dior</label>
+
+<label><input class="brand" type="checkbox" value="rom&nd"> Rom&nd</label>
+
+<label><input class="brand" type="checkbox" value="peripera"> Peripera</label>
+
+<label><input class="brand" type="checkbox" value="cocoon"> Cocoon</label>
+
+<label><input class="brand" type="checkbox" value="moroccanoil"> Moroccanoil</label>
+
+</div>
+
+<h3>KHOẢNG GIÁ</h3>
+
+<div class="filter">
+
+<label>
+
+<input
+name="price" value="200" type="radio">
+Dưới 200K
+</label>
+
+<label>
+
+<input
+name="price" value="500" type="radio">
+200–500K
+</label>
+
+<label>
+
+<input name="price" value="9999" type="radio">
+Trên 500K
+</label>
+
+</div>
+
+<button
+class="btn"
+
+onclick="filterProducts()">
+
+LỌC
+
+</button>
+
+</aside>
+
+<!-- PRODUCT -->
+
+<section class="products">
+
+<div class="toolbar">
+
+<p>
+
+Hiển thị
+1–8 / 24 sản phẩm
+
+</p>
+
+<select
+class="sort"
+
+onchange="sortProducts()">
+
+<option>
+
+Mới nhất
+
+</option>
+
+<option>
+
+Giá từ thấp đến cao
+
+</option>
+
+<option>
+
+Giá từ cao đến thấp
+
+</option>
+
+</select>
+
+</div>
+
+<div
+class="grid"
+
+id="productGrid">
+
+</div>
+
+<!-- PAGINATION -->
+
+<div class="pagination"></div>
+
+</section>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-col">
+
+            <img src="images/logo.jpg" class="footer-logo">
+
+            <div class="footer-desc">
+                Nâng tầm vẻ đẹp - Lan tỏa tự tin
+            </div>
+
+            <div class="footer-desc">
+                Chúng tôi cam kết mang đến sản phẩm
+                hiệu quả và dịch vụ tốt nhất cho bạn
+            </div>
+
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-tiktok'></i></a>
+                <a href="#"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+
+        <!-- COL 2 -->
+        <div class="footer-col">
+            <h3>Hỗ trợ khách hàng</h3>
+            <a href="chinh_sach.html#muahang">Chính sách mua hàng</a>
+            <a href="chinh_sach.html#doitra">Chính sách đổi trả</a>
+            <a href="chinh_sach.html#baomat">Chính sách bảo mật</a>
+            <a href="thanh_toan.html">Thanh toán & đặt hàng</a>
+        </div>
+
+       <!-- COL 3 -->
+        <div class="footer-col">
+            <h3>Thông tin</h3>
+            <a href="gioi_thieu.html">Giới thiệu</a>
+            <a href="tin_tuc.html">Tin tức làm đẹp</a>
+            <a href="lien_he.html">Liên hệ</a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-col">
+
+            <h3>Đăng ký nhận tin</h3>
+
+            <div class="footer-desc">
+                Nhận ngay ưu đãi và thông tin
+                khuyến mãi mới nhất từ chúng tôi.
+            </div>
+
+            <div class="newsletter">
+               <input
+                     type="email"
+                     id="newsletter-email"
+                     placeholder="Nhập email của bạn"
+                >
+              <button onclick="subscribeEmail()" class="newsletter-btn">
+                     <i class='bx bx-send'></i>
+                </button>
+          </div>
+            <p id="newsletter-message"></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Beauty Cosmetic Beauty. All rights reserved.
+    </div>
+</div>
+</footer>
+<script src="js/load-components.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => loadHeader());
+</script>
+<script src="san_pham.js"></script>
+<script src="danh_muc.js"></script>
+</body>
+
+</html>

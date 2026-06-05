@@ -1,0 +1,200 @@
+/* ===== CONTACT PAGE ===== */
+
+.contact-page{
+    padding:80px 0;
+    background:#fff;
+}
+
+.contact-page .container{
+    width:1200px;
+    max-width:95%;
+    margin:auto;
+
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+}
+
+/* LEFT */
+.contact-left{
+    flex:1;
+}
+
+/* TAG */
+.contact-tag{
+    display:inline-block;
+    background:linear-gradient(90deg,#ffbfd2,#f8a5c2);
+    color:#fff;
+    padding:10px 22px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+/* TITLE */
+.contact-left h2{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:30px;
+    color:#e85d8a;
+}
+
+/* FORM */
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    border:1px solid #eee;
+    border-radius:12px;
+    padding:16px 18px;
+    font-size:15px;
+    font-family:'Montserrat',sans-serif;
+    transition:0.3s;
+    background:#fff;
+}
+
+.contact-form textarea{
+    height:160px;
+    resize:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#f8a5c2;
+    outline:none;
+    box-shadow:0 0 0 4px rgba(248,165,194,0.15);
+}
+
+/* =========================
+   BUTTON - ĐÃ ĐỒNG BỘ CHUẨN
+   ========================= */
+.btn-order {
+    width: 180px;           /* Giữ nút bé xinh xắn 180px như cũ */
+    height: 55px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 12px;
+
+    /* Trạng thái bình thường: Màu hồng nhạt */
+    background: #f48fb1; 
+    color: #fff;
+
+    /* Font chữ */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+
+    /* Thêm đổ bóng nhẹ lúc bình thường cho đồng bộ */
+    box-shadow: 0 4px 10px rgba(244, 166, 193, 0.2);
+}
+
+/* Khi di chuột qua (Hover): Nẩy nhẹ lên và đổi màu nền */
+.btn-order:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(244, 166, 193, 0.25);
+    background: #f17da4; 
+}
+
+/* KHI ẤN VÀO (Active): Chuyển sang hồng đậm hẳn và lún nút xuống khi click */
+.btn-order:active {
+    background: #e85d8a !important; 
+    transform: translateY(-1px);     
+    box-shadow: 0 4px 8px rgba(232, 93, 138, 0.3);
+}
+
+/* RIGHT */
+.contact-right{
+    width:420px;
+    background:#fff5f8;
+    padding:40px;
+    border-radius:24px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.contact-right h3{
+    font-size:22px;
+    margin-bottom:24px;
+    color:#d98aa6;  /* hồng trầm nhẹ */
+}
+
+/* INFO */
+.contact-info p{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+    font-size:15px;
+    color:#666;
+}
+
+.contact-info i{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#ffb3c7;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* SOCIAL */
+.contact-social{
+    display:flex;
+    gap:12px;
+    margin:28px 0;
+}
+
+.contact-social a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#fff;
+    color:#f48fb1;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.contact-social a:hover{
+    background:#f8b6cb;
+    color:#fff;
+    transform:translateY(-3px);
+}
+
+/* MAP */
+.contact-right iframe{
+    width:100%;
+    height:220px;
+    border:none;
+    border-radius:18px;
+}
+
+/* MOBILE */
+@media(max-width:991px){
+    .contact-page .container{
+        flex-direction:column;
+    }
+
+    .contact-right{
+        width:100%;
+    }
+
+    .contact-left h2{
+        font-size:32px;
+    }
+}

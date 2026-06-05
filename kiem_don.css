@@ -1,0 +1,152 @@
+.order-page{
+    width:90%;
+    max-width:1000px;
+    margin:60px auto;
+}
+
+
+.order-title{
+    text-align:center;
+    color:#e85d8a;
+    margin-bottom:50px;
+    font-size:32px;
+    font-weight:650;
+}
+
+
+.order-box{
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+
+.search-order label{
+    display:block;
+    margin-bottom:14px;
+    font-size:18px;
+    font-weight:500;
+    color:#333;
+}
+
+
+.search-group{
+    display:flex;
+    gap:15px;
+}
+
+
+.search-group input{
+    flex:1;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+
+.search-group button{
+    border:none;
+    background:#f19abb;
+    color:#fff;
+    padding:15px 35px;
+    border-radius:14px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+
+.search-group button:hover{
+    background:#e88bab;
+}
+
+
+.order-result{
+    margin-top:40px;
+}
+
+
+/* TIMELINE */
+.progress{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    margin:45px 0;
+}
+
+
+.step{
+    flex:1;
+    text-align:center;
+    position:relative;
+}
+
+
+/* ĐƯỜNG NỐI */
+.step::after{
+    content:"";
+    position:absolute;
+    top:20px;
+    left:50%;
+    width:100%;
+    height:2px;
+    background:#f3e3ea;
+    z-index:0;
+}
+
+
+.step:last-child::after{
+    display:none;
+}
+
+
+/* NÚT 1 2 3 4 */
+.circle{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#f9edf2;
+    color:#c98ca2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    font-size:15px;
+    font-weight:500;
+    position:relative;
+    z-index:2;
+    border:1px solid #f5dbe4;
+}
+
+
+/* STEP ĐANG ACTIVE */
+.step.active .circle{
+    background:#e88bab;
+    color:#fff;
+    border:none;
+}
+
+
+/* TEXT */
+.step p{
+    margin-top:12px;
+    font-size:17px;
+    font-weight:400;
+    color:#555;
+}
+
+
+/* TEXT ACTIVE */
+.step.active p{
+    color:#d66f97;
+    font-weight:500;
+}
+
+
+.order-info{
+    margin-top:35px;
+    line-height:1.9;
+    font-size:17px;
+    color:#444;
+}
+

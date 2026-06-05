@@ -1,0 +1,202 @@
+.cart-page{
+    width:95%;
+    max-width:1100px;
+    margin:60px auto;
+}
+
+
+.cart-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#e85d8a;
+}
+
+
+.cart-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+
+.cart-table th,
+.cart-table td{
+    border-bottom:1px solid #ddd;
+    padding:20px;
+    text-align:center;
+}
+
+
+.product-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+
+.product-info img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:10px;
+}
+.delete-btn{
+    border:none;
+    background:#ffd6e5;
+    color:#e85d8a;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+    box-shadow:0 2px 8px rgba(232,93,138,0.2);
+}
+
+
+/* NÚT + - */
+.quantity-box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+
+
+.quantity-box button{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:50%;
+    background:#ffeaf1;
+    color:#d97a9a;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+
+.quantity-box button:hover{
+    background:#f8dbe6;
+    transform:scale(1.05);
+}
+
+
+.quantity-box span{
+    min-width:20px;
+    font-weight:600;
+    color:#cc6f92;
+}
+
+
+
+
+/* NÚT THÙNG RÁC */
+.delete-btn{
+    border:none;
+    background:#ffeaf1;
+    color:#d97a9a;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 2px 8px rgba(240, 185, 205, 0.25);
+}
+
+
+.delete-btn:hover{
+    background:#f8dbe6;
+    transform:scale(1.08);
+}
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px;      
+}
+
+
+.continue-btn{
+    text-decoration:none;
+    color:#c98ca2;
+    background:#fdeff4;
+    padding:12px 20px;
+    border-radius:14px;
+    font-size:14px;
+    transition:.3s;
+}
+
+
+.continue-btn:hover{
+    background:#f9dce7;
+}
+
+
+.cart-total {
+    width: 350px;         
+    background: #fffcfd;   
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(232, 93, 138, 0.05); 
+}
+
+
+.total-line{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid #f3e4ea;
+    font-size:15px;
+    color:#555;
+}
+
+
+.total-price{
+    font-size:16px;
+    font-weight:500;
+    color:#e88bab;
+}
+
+
+/* NÚT THANH TOÁN (GIỎ HÀNG) */
+
+.checkout-btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 18px;
+    padding: 14px;              /* Tăng nhẹ padding cho nút nhìn dày dặn, cân đối */
+    border-radius: 14px;
+    
+    /* Trạng thái bình thường: Màu hồng nhạt giống nút Gửi ngay */
+    background: #f48fb1;
+    color: #fff;
+    
+    /* Font chữ */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;           /* Tăng font-weight lên 600 nhìn chữ sẽ sắc nét hơn */
+    
+    cursor: pointer;
+    transition: 0.2s;
+    
+    /* Đổ bóng nhẹ lúc bình thường */
+    box-shadow: 0 4px 10px rgba(244, 166, 193, 0.2);
+}
+
+/* Khi di chuột qua (Hover): Nẩy nhẹ lên và đổi màu nền */
+.checkout-btn:hover {
+    background: #f17da4; 
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(244, 166, 193, 0.25);
+}
+
+/* KHI ẤN VÀO (Active): Chuyển sang hồng đậm hẳn và lún nút xuống */
+.checkout-btn:active {
+    background: #e85d8a !important; /* Đổi thành hồng đậm chuẩn */
+    transform: translateY(-1px);     /* Hiệu ứng lún nút */
+    box-shadow: 0 4px 8px rgba(232, 93, 138, 0.3);
+}
+
+

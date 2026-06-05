@@ -1,0 +1,222 @@
+<!-- trangchu.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>GIỎ HÀNG</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gio_hang.css">
+
+    <!-- Boxicons (footer) -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="header"></div>
+<!-- Giỏ hàng -->
+<main class="cart-page">
+
+
+
+
+    <h1 class="cart-title">
+        Giỏ hàng của bạn
+    </h1>
+
+
+
+
+    <table class="cart-table">
+
+
+
+
+    <thead>
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th>Xóa</th>
+        </tr>
+    </thead>
+
+
+
+
+    <tbody id="cart-body">
+
+
+
+
+    </tbody>
+
+
+
+
+</table>
+
+
+<div class="cart-actions">
+
+
+    <a href="danh_muc.html"
+       class="continue-btn">
+
+
+       ← Tiếp tục mua hàng
+    </a>
+
+
+    <div class="cart-total">
+
+
+        <div class="total-line">
+            <span>Tạm tính</span>
+            <span id="subtotal">0đ</span>
+        </div>
+
+
+        <div class="total-line">
+            <span>Phí ship</span>
+            <span id="shipping">0đ</span>
+        </div>
+
+
+        <div class="total-line total-price">
+            <span>Tổng cộng</span>
+            <span id="total">0đ</span>
+        </div>
+
+
+        <a href="thanh_toan.html"
+           class="checkout-btn">
+
+
+           Thanh toán
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</main>
+
+   <!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-col">
+
+            <img src="images/logo.jpg" class="footer-logo">
+
+            <div class="footer-desc">
+                Nâng tầm vẻ đẹp - Lan tỏa tự tin
+            </div>
+
+            <div class="footer-desc">
+                Chúng tôi cam kết mang đến sản phẩm
+                hiệu quả và dịch vụ tốt nhất cho bạn
+            </div>
+
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-tiktok'></i></a>
+                <a href="#"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+
+        <!-- COL 2 -->
+        <div class="footer-col">
+            <h3>Hỗ trợ khách hàng</h3>
+            <a href="chinh_sach.html">Chính sách mua hàng</a>
+            <a href="chinh_sach.html">Chính sách đổi trả</a>
+            <a href="chinh_sach.html">Chính sách bảo mật</a>
+            <a href="thanh_toan.html">Thanh toán & đặt hàng</a>
+        </div>
+
+       <!-- COL 3 -->
+        <div class="footer-col">
+            <h3>Thông tin</h3>
+            <a href="gioi_thieu.html">Giới thiệu</a>
+            <a href="tin_tuc.html">Tin tức làm đẹp</a>
+            <a href="lien_he.html">Liên hệ</a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-col">
+
+            <h3>Đăng ký nhận tin</h3>
+
+            <div class="footer-desc">
+                Nhận ngay ưu đãi và thông tin
+                khuyến mãi mới nhất từ chúng tôi.
+            </div>
+
+            <div class="newsletter">
+               <input
+                     type="email"
+                     id="newsletter-email"
+                     placeholder="Nhập email của bạn"
+                >
+              <button onclick="subscribeEmail()" class="newsletter-btn">
+                     <i class='bx bx-send'></i>
+                </button>
+          </div>
+            <p id="newsletter-message"></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Beauty Cosmetic Beauty. All rights reserved.
+    </div>
+
+</footer>
+<script src="js/load-components.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => loadHeader());
+</script>
+<script src="gio_hang.js"></script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
