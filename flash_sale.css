@@ -265,7 +265,8 @@
 @media(max-width:900px){
 
     .product-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(2,250px);
+               justify-content: center;
     }
 
 }
@@ -273,11 +274,13 @@
 @media(max-width:600px){
 
     .product-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,250px);
+               justify-content: center;  
     }
 
     .flash-time-list{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(2,250px);
+               justify-content: center;
     }
 
     .countdown-wrap{

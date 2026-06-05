@@ -15,7 +15,6 @@
     margin: 0 0 10px 0;        /* Khoảng cách dưới chữ h2 */
 }
 
-
 .product-card button{
     background:#F28BA8;
     color:white;
@@ -38,7 +37,7 @@
 
 .product-grid{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4,250px);
     gap: 25px;
 }
 
@@ -96,21 +95,28 @@
 
 @media(max-width:1200px){
     .product-grid{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:repeat(3,250px);
+               justify-content: center;
     }
 }
-
 
 @media(max-width:900px){
     .product-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(2,250px);
+               justify-content: center;
     }
+    .section-title h2 {
+    font-size: 16px;           
+    font-weight: 700;         
+    color: #e85d8a;           
+    margin: 0 0 10px 0;  
 }
-
+}
 
 @media(max-width:600px){
     .product-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,250px);
+               justify-content: center;
     }
 }
 
