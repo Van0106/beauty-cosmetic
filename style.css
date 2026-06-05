@@ -343,3 +343,47 @@ a {
 a:hover {
     text-decoration: none !important;
 }
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width:768px){
+
+    .header-top{
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .logo img,
+    .logo-img{
+        height: 80px;
+        max-width: 200px;
+    }
+
+    .search-box{
+        width: 95%;
+    }
+
+    .header-icons{
+        gap: 15px;
+        font-size: 18px;
+    }
+
+    .nav-menu{
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 12px 10px;
+    }
+
+    .nav-menu a{
+        font-size: 13px;
+    }
+
+    .container{
+        padding: 0 10px;
+    }
+}
+*{
+    outline:1px solid red;
+}
