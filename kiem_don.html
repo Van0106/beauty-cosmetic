@@ -45,7 +45,18 @@
             </div>
 
             <div class="order-result" id="orderResult" style="display:none; margin-top: 30px; padding: 25px; background-color: #fff5f7; border: 1px solid #fcdade; border-radius: 12px;">
-                <h3 style="color: #333; font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 25px;">Trạng thái đơn hàng</h3>
+    
+    <!-- KHU VỰC CHỌN ĐƠN HÀNG -->
+    <div id="order-list-area" style="margin-bottom: 25px;">
+        <h3 style="color: #333; font-size: 16px; margin-bottom: 15px;">Chọn đơn hàng cần xem:</h3>
+        <div id="list-container" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Các nút bấm đơn hàng sẽ được JS tự tạo ra ở đây -->
+        </div>
+    </div>
+
+    <!-- KHU VỰC CHI TIẾT ĐƠN HÀNG (Sẽ bị ẩn cho đến khi người dùng bấm chọn đơn) -->
+    <div id="detail-container" style="display: none; border-top: 1px solid #fcdade; padding-top: 20px;">
+        <h3 style="color: #333; font-size: 18px; text-align: center; margin-bottom: 20px;">Trạng thái đơn hàng</h3>
 
                 <div class="progress-container" style="display: flex; justify-content: space-between; position: relative; margin-bottom: 30px;">
                     <div class="progress-line" style="position: absolute; top: 15px; left: 8%; right: 8%; height: 2px; background: #dee2e6; z-index: 1;"></div>

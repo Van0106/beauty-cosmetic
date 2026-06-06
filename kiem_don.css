@@ -242,3 +242,32 @@ body {
         padding:15px;
     }
 }
+
+/* Style cho danh sách đơn hàng mới */
+.order-item-btn {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px solid #F1D7DF;
+    border-radius: 8px;
+    color: #3B3B3B;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.order-item-btn:hover {
+    background-color: #fff5f7;
+    border-color: #F28BA8;
+    color: #E85D8E;
+}
+
+.order-item-btn.active {
+    background-color: #F28BA8;
+    color: white;
+    border-color: #F28BA8;
+}

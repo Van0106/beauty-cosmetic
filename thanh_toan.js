@@ -63,68 +63,44 @@ shipping.toLocaleString() + "đ";
 document.getElementById("orderTotal").innerText =
 finalTotal.toLocaleString() + "đ";
 
-function datHang(){
+function datHang() {
+    const fullname = document.getElementById("fullname").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
 
-    const fullname =
-    document.getElementById("fullname").value.trim();
-
-    const phone =
-    document.getElementById("phone").value.trim();
-
-    const email =
-    document.getElementById("email").value.trim();
-
-    const address =
-    document.getElementById("address").value.trim();
-
-    if(
-        !fullname ||
-        !phone ||
-        !email ||
-        !address ||
-        !province.value ||
-        !district.value ||
-        !ward.value
-    ){
-        alert(
-            "Vui lòng nhập đầy đủ thông tin nhận hàng!"
-        );
+    if (!fullname || !phone || !email || !address || !province.value || !district.value || !ward.value) {
+        alert("Vui lòng nhập đầy đủ thông tin nhận hàng!");
         return;
     }
 
-    if(cart.length === 0){
-
-        alert(
-            "Giỏ hàng đang trống!"
-        );
-
+    if (cart.length === 0) {
+        alert("Giỏ hàng đang trống!");
         return;
     }
-    const orderCode = "DH" + Date.now();
 
+    // TẠO MÃ ĐƠN HÀNG DUY NHẤT
+    const orderCode = Date.now(); 
+
+    // GÓI DỮ LIỆU ĐƠN HÀNG
     const orderData = {
-    phone: phone,
-    date: new Date().toLocaleDateString("vi-VN"),
-    payment: document.querySelector(
-        'input[name="paymentMethod"]:checked'
-    )?.value || "COD",
-    total: finalTotal.toLocaleString() + "đ",
-    status: 1
-};
+        phone: phone, // Bắt buộc phải có để trang kiểm tra tìm được
+        date: new Date().toLocaleDateString("vi-VN"),
+        payment: document.querySelector('input[name="paymentMethod"]:checked')?.value || "COD",
+        total: finalTotal.toLocaleString() + "đ",
+        status: "0" // 0: Đã xác nhận, 1: Chuẩn bị, 2: Giao, 3: Hoàn thành
+    };
 
-localStorage.setItem(
-    "order_" + orderCode,
-    JSON.stringify(orderData)
-);
+    // LƯU VÀO LOCALSTORAGE VỚI KEY LÀ "order_" + mã
+    localStorage.setItem("order_" + orderCode, JSON.stringify(orderData));
 
-    alert(
-        "Đặt hàng thành công!"
-    );
+    alert("Đặt hàng thành công! Mã đơn của bạn là: DH" + orderCode);
 
+    // Dọn dẹp giỏ hàng
     localStorage.removeItem("cart");
 
-    window.location.href =
-    "trang_chu.html";
+    // Chuyển trang
+    window.location.href = "trang_chu.html";
 }
 
 document
@@ -283,3 +259,4 @@ district.addEventListener(
         });
     }
 );
+
