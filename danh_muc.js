@@ -26,6 +26,7 @@ function loadProducts(){
             data-category="${sp.danhMuc}"
             data-brand="${sp.thuongHieu.toLowerCase()}"
             data-price="${giaMoi}"
+            data-search="${sp.ten.toLowerCase()} ${sp.thuongHieu.toLowerCase()} ${sp.danhMuc.toLowerCase()}"
         >
 
             <span class="sale">
@@ -136,6 +137,15 @@ function filterProducts(){
         const p =
         parseInt(card.dataset.price) / 1000;
 
+    if(window.searchFilterQuery){
+
+       const searchText =
+          card.dataset.search;
+       
+      if(!searchText.includes(window.searchFilterQuery)){
+        hide = true;
+       }
+}
         if(
             categories.length &&
             !categories.includes(card.dataset.category)
@@ -152,20 +162,33 @@ function filterProducts(){
 
         if(price){
 
-           const value = price.value;
+            const value = price.value;
 
-           if(value==="200" && p>=200){
-               hide=true;
-           }
-
-           if(value==="500" && (p<200 || p>500)){
+            if(
+                value==="200" &&
+                p>=200
+            ){
                 hide=true;
             }
 
-           if(value==="9999" && p<=500){
+            if(
+                value==="500" &&
+                (
+                    p<200 ||
+                    p>500
+                )
+            ){
                 hide=true;
             }
-}
+
+            if(
+                value==="9999" &&
+                p<=500
+            ){
+                hide=true;
+            }
+        }
+
         card.dataset.hidden = hide;
     });
 
@@ -207,19 +230,31 @@ function loadCategoryFromUrl() {
 
     const params = new URLSearchParams(window.location.search);
 
-    const category = params.get("category");
+    console.log("URL =", window.location.href);
+    console.log("SEARCH =", params.get("search"));
 
-    if (!category) return;
-
-    const checkbox = document.querySelector(
-        `.category[value="${category}"]`
-    );
-
-    if (checkbox) {
-        checkbox.checked = true;
-        filterProducts();
+    if (searchParam) {
+        window.searchFilterQuery = searchParam.toLowerCase();
+        
+        let headerTitle = document.querySelector(".section-title h2");
+        if(headerTitle) headerTitle.innerText = "KẾT QUẢ TÌM KIẾM: " + searchParam;
     }
+
+    if (!category && !searchParam) return;
+
+    if (category) {
+        const checkbox = document.querySelector(
+            `.category[value="${category}"]`
+        );
+
+        if (checkbox) {
+            checkbox.checked = true;
+        }
+    }
+    
+    filterProducts();
 }
+
 document.querySelectorAll('input[name="price"]').forEach(radio => {
 
     radio.addEventListener('click', function() {
@@ -249,5 +284,7 @@ window.addEventListener("load", () => {
     loadProducts();
 
     loadCategoryFromUrl();
+
+    filterProducts();
 
 });

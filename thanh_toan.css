@@ -162,7 +162,6 @@ BUTTON
     margin-top: 18px;
     border: none;
     border-radius: 12px;
-
     /* Trạng thái bình thường: Màu hồng nhạt */
     background: #f48fb1;
     color: #fff;
@@ -268,4 +267,10 @@ PHƯƠNG THỨC THANH TOÁN
 
 .payment-box p{
     margin-bottom:6px;
+}
+
+/* FIX HEADER THANH TOÁN */
+.header .nav-menu{
+    justify-content: center !important;
+    gap: 40px !important;
 }

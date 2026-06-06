@@ -13,7 +13,7 @@
 }
 
 .banner{
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 20px ;
 }
 
@@ -66,12 +66,11 @@
 }
 
 .category{
-    padding-top: 10px;
+    padding: 30px 0;
 }
 
 .category-grid{
-    display: grid;
-    grid-template-columns:repeat(4,1fr);
+    display: flex;
     justify-content: center; 
     gap: 30px;              
 }
@@ -95,7 +94,6 @@
 
 .cate-item:hover{
     transform: translateY(-5px);
-    background: #fdf2f6;
 }
 
 .cate-item i{
@@ -103,7 +101,6 @@
     color: #F28BA8;
     margin-bottom: 15px;
 }
-
 .cate-item p{
     font-size:15px;
     font-weight:600;
@@ -132,6 +129,13 @@
     padding: 50px 0;
 }
 
+
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+}
+
 .product-card{
     background: white;
     border-radius: 20px;
@@ -158,6 +162,17 @@
     border-radius:15px;
     background:white;
     padding:10px;
+}
+
+.sale{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #FF4D6D;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
 }
 
 .product-card h3{
@@ -190,6 +205,9 @@
     margin-bottom: 10px;
     color:#666;
     font-size:15px;
+}
+.sale-banner{
+    padding: 40px 0;
 }
 
 .sale-box{
@@ -239,14 +257,8 @@
     width: 100%;
     height: 240px;
     object-fit: cover;
+}
 
-}
-.blog-card:hover img{
-    transform: scale(1.1);
-}
-.blog-card:hover{
-    transform: translateY(-8px);
-}
 .blog-content{
     padding: 20px;
 }
@@ -269,89 +281,67 @@
     padding: 15px 5px;
 }
 
-
-#danh-sach-flash-sale::-webkit-scrollbar{
-    height:8px;
+#danh-sach-flash-sale::-webkit-scrollbar {
+    display: none;
 }
-#danh-sach-flash-sale::-webkit-scrollbar-thumb{
-    background:#f28ba8;
-    border-radius:10px;
+
+#danh-sach-flash-sale {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 #danh-sach-flash-sale .product-card {
-    flex: 0 0 280px;
+    flex: 0 0 calc(25% - 15px);
     scroll-snap-align: start;
     box-sizing: border-box;
 }
+.sold-bar{
+    height:14px;
+    background:#FFE2EA;
+    border-radius:999px;
+    overflow:hidden;
+    margin-top:18px;
+}
 
-@media(max-width:1200px){
- .blog-grid,.category-grid{
-        grid-template-columns:repeat(3,250px);
-         justify-content:center;
+.sold-process{
+    height:100%;
+    border-radius:999px;
+    background:linear-gradient(
+        90deg,
+        #FF7A9E,
+        #FF4D6D
+    );
+}
+
+.sold50{width:50%;}
+.sold60{width:60%;}
+.sold70{width:70%;}
+.sold80{width:80%;}
+.sold90{width:90%;}
+
+.sold-text{
+    margin-top:5px;
+    margin-bottom: 5px;
+    color:#666;
+    font-size:15px;
+}
+
+
+
+@media (max-width: 1024px) {
+    #danh-sach-flash-sale .product-card {
+        flex: 0 0 calc(33.33% - 14px);
     }
 }
 
-@media(max-width:900px){
-.blog-grid,.category-grid{
-        grid-template-columns:repeat(2,250px);
-         justify-content:center;
+@media (max-width: 768px) {
+    #danh-sach-flash-sale .product-card {
+        flex: 0 0 calc(50% - 10px);
     }
 }
 
-@media(max-width:600px){
-.blog-grid,.category-grid{
-        grid-template-columns:repeat(2,250px);
-         justify-content:center;
+@media (max-width: 480px) {
+    #danh-sach-flash-sale .product-card {
+        flex: 0 0 calc(85% - 10px);
     }
-}
-/* Tablet */
-@media (max-width: 900px){
-    .sale-box,.banner-content{
-        padding: 50px 40px;
-    }
-    .sale-box h1,.banner-text h1{
-        font-size: 42px;
-    }
-    .sale-box p,.banner-text p{
-        font-size: 15px;
-    }
-}
-
-/* Điện thoại */
-@media (max-width: 600px){
-    .sale-banner,.banner{
-        padding: 10px;
-    }
-    .sale-box,.banner-content{
-        padding: 30px 20px;
-        border-radius: 18px;
-        text-align: center;
-        background-position: center;
-    }
-    .sale-box h1,.banner-text h1{
-        font-size: 28px;
-        margin-bottom: 12px;
-        line-height: 1.3;
-    }
-
-    .sale-box p,.banner-text p{
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 18px;
-    }
-
-    .sale-box button{
-        padding: 10px 22px;
-        font-size: 14px;
-    }
-}
-@media (max-width: 600px){
-
-    .sale-box,.banner-content{
-        min-height: 260px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
 }

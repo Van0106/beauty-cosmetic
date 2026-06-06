@@ -1,3 +1,7 @@
+body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+}
 /* 1. TỔNG THỂ TRANG & KHUNG BAO NGOÀI  */
 .order-page {
     padding: 60px 0;

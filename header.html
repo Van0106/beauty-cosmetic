@@ -1,6 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html, body { margin: 0; padding: 0; background: #fff; overflow: visible; }
+        
+    </style>
+</head>
+<body>
 
 <header class="header">
-    <div class="container header-top">
+    <div class="header-container header-top">
         <div class="logo">
             <a href="trang_chu.html" title="Trang chủ - Beauty Cosmetic Beauty" target="_parent">
                 <img src="images/logo.jpg" alt="Beauty Cosmetic Beauty" class="logo-img">
@@ -8,24 +23,50 @@
         </div>
 
         <div class="search-box">
-            <input type="text" placeholder="Tìm kiếm sản phẩm...">
-            <button type="button" aria-label="Tìm kiếm" title="Tìm kiếm">
+            <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm..." onkeypress="if(event.key === 'Enter') executeSearch()">
+            <button type="button" aria-label="Tìm kiếm" title="Tìm kiếm" onclick="executeSearch()">
                 <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
             </button>
         </div>
 
         <div class="header-icons">
-            <a href="tai_khoan.html" title="Đăng nhập" target="_parent"><i class="fa-regular fa-user" aria-hidden="true"></i></a>
-            <a href="yeu_thich.html" title="Yêu thích" target="_parent"><i class="fa-regular fa-heart" aria-hidden="true"></i></a>
-            <a href="gio_hang.html" title="Giỏ hàng" target="_parent" class="cart-icon">
-                <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
-                <span id="cart-count" style="display: none;">0</span>
+            <a href="tai_khoan.html" class="header-icon-item" target="_parent">
+                <i class="fa-regular fa-user"></i>
+                <div class="icon-text">
+                    <span class="text-top">Tài khoản</span>
+                    <span class="text-bottom">Đăng nhập</span>
+                </div>
+            </a>
+            
+            <a href="yeu_thich.html" class="header-icon-item" target="_parent">
+                <i class="fa-regular fa-heart"></i>
+                <div class="icon-text">
+                    <span class="text-top">Yêu thích</span>
+                </div>
+            </a>
+            
+            <a href="gio_hang.html" class="header-icon-item" target="_parent">
+                <div class="cart-icon-wrapper">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count" style="display: none;">0</span>
+                </div>
+                <div class="icon-text">
+                    <span class="text-top">Giỏ hàng</span>
+                </div>
+            </a>
+
+            <a href="kiem_don.html" class="header-icon-item" target="_parent">
+                <i class="fa-solid fa-box-open"></i>
+                <div class="icon-text">
+                    <span class="text-top">Kiểm tra</span>
+                    <span class="text-bottom">đơn hàng</span>
+                </div>
             </a>
         </div>
     </div>
 
     <nav class="navbar">
-        <div class="container nav-menu">
+        <div class="header-container nav-menu">
             <a href="trang_chu.html" target="_parent">TRANG CHỦ</a>
             <a href="danh_muc.html" target="_parent">DANH MỤC</a>
             <a href="khuyen_mai.html" target="_parent">KHUYẾN MÃI</a>
@@ -35,3 +76,18 @@
         </div>
     </nav>
 </header>
+
+<script>
+function executeSearch() {
+    let query = document.getElementById("search-input").value.trim();
+    if (query !== "") {
+        if (window.parent !== window) {
+            window.parent.location.href = "danh_muc.html?search=" + encodeURIComponent(query);
+        } else {
+            window.location.href = "danh_muc.html?search=" + encodeURIComponent(query);
+        }
+    }
+}
+</script>
+</body>
+</html>

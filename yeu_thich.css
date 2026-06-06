@@ -1,4 +1,7 @@
-﻿
+﻿/* =========================
+   TIÊU ĐỀ KHỐI SẢN PHẨM - GIỐNG TRANG LIÊN HỆ
+   ========================= */
+
 .section-title {
     display: flex;
     flex-direction: column;    /* Chuyển thành hàng dọc để đưa mọi thứ vào giữa */
@@ -9,10 +12,22 @@
 }
 
 .section-title h2 {
-    font-size: 32px;           
-    font-weight: 700;          /*  In đậm hoàn toàn  */
-    color: #e85d8a;           
+    font-size: 32px;           /* ĐÃ SỬA: Bằng kích thước trang liên hệ */
+    font-weight: 700;          /* ĐÃ SỬA: In đậm hoàn toàn giống trang liên hệ */
+    color: #e85d8a;            /* ĐÃ SỬA: Đúng màu hồng chuẩn của trang liên hệ */
     margin: 0 0 10px 0;        /* Khoảng cách dưới chữ h2 */
+}
+
+.section-title a {
+    text-decoration: none;
+    color: #777;
+    font-size: 15px;           /* Chữ "Xem tất cả" nhỏ gọn nằm ngay bên dưới */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.section-title a:hover {
+    color: #e85d8a;            /* Di chuột vào chữ "Xem tất cả" sẽ đổi sang hồng đậm */
 }
 
 .product-card button{
@@ -37,7 +52,7 @@
 
 .product-grid{
     display: grid;
-    grid-template-columns: repeat(4,250px);
+    grid-template-columns: repeat(4,1fr);
     gap: 25px;
 }
 
@@ -95,28 +110,21 @@
 
 @media(max-width:1200px){
     .product-grid{
-        grid-template-columns:repeat(3,250px);
-               justify-content: center;
+        grid-template-columns:repeat(3,1fr);
     }
 }
+
 
 @media(max-width:900px){
     .product-grid{
-        grid-template-columns:repeat(2,250px);
-               justify-content: center;
+        grid-template-columns:repeat(2,1fr);
     }
-    .section-title h2 {
-    font-size: 16px;           
-    font-weight: 700;         
-    color: #e85d8a;           
-    margin: 0 0 10px 0;  
 }
-}
+
 
 @media(max-width:600px){
     .product-grid{
-        grid-template-columns:repeat(2,250px);
-               justify-content: center;
+        grid-template-columns:1fr;
     }
 }
 

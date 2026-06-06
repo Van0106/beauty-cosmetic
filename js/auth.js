@@ -73,23 +73,38 @@ function loginUser(email, password) {
 
 function initAuthHeader() {
     const session = getSession();
-    const header = document.querySelector(".header-icons");
-    if (!header) return;
+    
+    // Support finding inside iframes
+    const frames = document.querySelectorAll(".partial-frame--header");
+    let docs = [document];
+    frames.forEach(f => {
+        try {
+            if (f.contentDocument) docs.push(f.contentDocument);
+        } catch(e) {}
+    });
 
-    const userLink = header.querySelector('a[title="Đăng nhập"], a[title="Tài khoản"], a[title="Đăng xuất"]');
-    if (!userLink) return;
+    docs.forEach(doc => {
+        const header = doc.querySelector(".header-icons");
+        if (!header) return;
 
-    if (session) {
-        userLink.href = "tai_khoan.html";
-        userLink.title = "Tài khoản";
-        userLink.innerHTML = '<i class="fa-solid fa-user" aria-hidden="true"></i>';
-        userLink.onclick = null;
-    } else {
-        userLink.href = "tai_khoan.html";
-        userLink.title = "Đăng nhập";
-        userLink.innerHTML = '<i class="fa-regular fa-user" aria-hidden="true"></i>';
-        userLink.onclick = null;
-    }
+        // Find the user link by icon class inside the header-icon-item
+        const userIcon = header.querySelector('.fa-user');
+        if (!userIcon) return;
+        
+        const userLink = userIcon.closest('.header-icon-item');
+        if (!userLink) return;
+
+        const textBottom = userLink.querySelector('.text-bottom');
+        if (!textBottom) return;
+
+        if (session) {
+            userIcon.className = "fa-solid fa-user";
+            textBottom.innerText = session.name;
+        } else {
+            userIcon.className = "fa-regular fa-user";
+            textBottom.innerText = "Đăng nhập";
+        }
+    });
 }
 
 function logoutUser() {

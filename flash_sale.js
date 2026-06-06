@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     <span class="old-price">${formatMoney(sp.giaGoc)}</span>
                 </div>
 
+                <div class="sold-bar">
+                    <div class="sold-process" style="width: ${phanTramDaBan}%;"></div>
+                </div>
+                <p class="sold-text">Đã bán ${phanTramDaBan}%</p>
+
                 <a href="chi_tiet.html?id=${sp.id}">
                     <button>Xem chi tiết</button>
                 </a>

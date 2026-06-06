@@ -73,6 +73,7 @@ function renderLoggedInView() {
         '<div class="auth-logged-actions">' +
         '<a href="trang_chu.html" class="auth-btn auth-btn-outline">Về trang chủ</a>' +
         '<a href="gio_hang.html" class="auth-btn auth-btn-outline">Giỏ hàng</a>' +
+        '<a href="yeu_thich.html" class="auth-btn auth-btn-outline">Yêu thích</a>' +
         '<button type="button" class="auth-btn" id="btn-logout">Đăng xuất</button>' +
         "</div></div>";
 
