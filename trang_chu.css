@@ -282,66 +282,20 @@
 }
 
 #danh-sach-flash-sale::-webkit-scrollbar {
-    display: none;
+    height:8px;
 }
 
-#danh-sach-flash-sale {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+#danh-sach-flash-sale::-webkit-scrollbar-thumb{
+    background:#f28ba8;
+    border-radius:10px;
 }
 
 #danh-sach-flash-sale .product-card {
-    flex: 0 0 calc(25% - 15px);
+    flex:0 0 calc((100% - 100px)/4);
     scroll-snap-align: start;
     box-sizing: border-box;
 }
-.sold-bar{
-    height:14px;
-    background:#FFE2EA;
-    border-radius:999px;
-    overflow:hidden;
-    margin-top:18px;
-}
 
-.sold-process{
-    height:100%;
-    border-radius:999px;
-    background:linear-gradient(
-        90deg,
-        #FF7A9E,
-        #FF4D6D
-    );
-}
-
-.sold50{width:50%;}
-.sold60{width:60%;}
-.sold70{width:70%;}
-.sold80{width:80%;}
-.sold90{width:90%;}
-
-.sold-text{
-    margin-top:5px;
-    margin-bottom: 5px;
-    color:#666;
-    font-size:15px;
-}
-
-#danh-sach-flash-sale{
-    display:flex;
-    gap:20px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-    scrollbar-width:none;
-    padding:10px 0;
-}
-
-#danh-sach-flash-sale::-webkit-scrollbar{
-    display:none;
-}
-
-#danh-sach-flash-sale .product-card{
-    flex:0 0 calc((100% - 100px)/6);
-}
 
 /* Mobile: vuốt ngang */
 @media (max-width:768px){

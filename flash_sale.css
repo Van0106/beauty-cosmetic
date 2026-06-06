@@ -1,4 +1,3 @@
-/* ================= FLASH SALE LAYOUT ================= */
 
 .flash-layout{
     padding:40px 0;
@@ -207,36 +206,6 @@
     -webkit-box-orient:vertical;
 }
 
-.sold-bar{
-    height:14px;
-    background:#FFE2EA;
-    border-radius:999px;
-    overflow:hidden;
-    margin-top:18px;
-}
-
-.sold-process{
-    height:100%;
-    border-radius:999px;
-    background:linear-gradient(
-        90deg,
-        #FF7A9E,
-        #FF4D6D
-    );
-}
-
-.sold50{width:50%;}
-.sold60{width:60%;}
-.sold70{width:70%;}
-.sold80{width:80%;}
-.sold90{width:90%;}
-
-.sold-text{
-    margin-top:5px;
-    margin-bottom: 5px;
-    color:#666;
-    font-size:15px;
-}
 
 .price{
     margin-bottom: 15px;
