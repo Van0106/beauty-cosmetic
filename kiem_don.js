@@ -15,17 +15,6 @@ function checkOrder() {
         return;
     }
 
-    // Tự động tạo 1 đơn hàng mẫu để test (Nếu trong máy chưa có đơn nào)
-    if (!localStorage.getItem("order_TEST123")) {
-        localStorage.setItem("order_TEST123", JSON.stringify({
-            phone: "0912345678",
-            date: "05/06/2026",
-            payment: "Thanh toán khi nhận hàng (COD)",
-            total: "550.000đ",
-            status: 2
-        }));
-    }
-
     let targetOrder = null;
     let orderCodeText = "";
 
