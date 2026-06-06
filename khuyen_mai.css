@@ -8,10 +8,11 @@
 
 .promo-banner img{
     width:100%;
-    height:500px;
+    height:400px;
     object-fit:cover;
     display:block;
-}/* =========================
+}
+/* =========================
 LAYOUT
 ========================= */
 
@@ -230,6 +231,11 @@ RESPONSIVE
         gap:12px;
     }
 
+        .promo-banner{
+        width:100%;
+        max-width:100%;
+        overflow:hidden;
+    }
     .promo-card{
         min-height:auto;
         padding:12px;
