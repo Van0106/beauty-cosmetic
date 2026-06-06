@@ -10,11 +10,16 @@ body{
 /* =========================
 LAYOUT
 ========================= */
-
 .checkout-container{
     display:flex;
     gap:30px;
     align-items:flex-start;
+}
+
+.checkout-wrapper{
+    width:1200px;
+    max-width:95%;
+    margin:40px auto;
 }
 
 .checkout-left{
@@ -269,8 +274,25 @@ PHƯƠNG THỨC THANH TOÁN
     margin-bottom:6px;
 }
 
-/* FIX HEADER THANH TOÁN */
-.header .nav-menu{
-    justify-content: center !important;
-    gap: 40px !important;
+
+@media(max-width:768px){
+    .checkout-item{
+        align-items:flex-start;
+    }
+
+    .checkout-item img{
+        width:45px;
+        height:45px;
+    }
+
+    .checkout-item div{
+        min-width:0;
+    }
+
+    .checkout-item p:first-child{
+        display:-webkit-box;
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        overflow:hidden;
+    }   
 }

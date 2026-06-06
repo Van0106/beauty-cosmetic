@@ -210,41 +210,55 @@ color:#fff;
 /* =========================
 RESPONSIVE
 ========================= */
+@media (max-width:768px){
+     .toolbar h2{
+        font-size:26px;
+        line-height:1.2;
+    }
+    .product-layout{
+        display:block;
+        padding:10px;
+    }
 
-@media(max-width:1200px){
+    .sidebar{
+        width:100%;
+        padding:15px;
+        margin-bottom:15px;
+    }
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
 
-.grid{
-grid-template-columns:repeat(3,1fr);
-}
+    .promo-card{
+        min-height:auto;
+        padding:12px;
+    }
 
-}
+    .promo-card img{
+        height:120px;
+        margin-bottom:10px;
+    }
 
-@media(max-width:992px){
+    .promo-card h4{
+        font-size:13px;
+        line-height:1.4;
+        height:38px;
+        margin:8px 0;
+    }
 
-.grid{
-grid-template-columns:repeat(2,1fr);
-}
+    .old-price{
+        font-size:12px;
+        margin-bottom:2px;
+    }
 
-.promo-banner img{
-height:300px;
-}
+    .price{
+        font-size:14px;
+        margin-top:0;
+    }
 
-}
-
-@media(max-width:576px){
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.toolbar{
-flex-direction:column;
-align-items:flex-start;
-gap:20px;
-}
-
-.promo-banner img{
-height:220px;
-}
-
+    .action a{
+        height:38px;
+        font-size:13px;
+    }
 }

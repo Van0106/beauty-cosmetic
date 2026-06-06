@@ -17,23 +17,6 @@ function injectPartial(containerId, partialUrl, frameUrl) {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
                 el.innerHTML = doc.body ? doc.body.innerHTML : html;
-                const btn =
-                el.querySelector(".search-box button");
-
-                const input =
-                el.querySelector("#search-input");
-
-                if(btn){
-                  btn.addEventListener("click", executeSearch);
-                }
-
-                if(input){
-                  input.addEventListener("keydown", e=>{
-                     if(e.key === "Enter"){
-                        executeSearch();
-                }
-       });
-}
             })
             .catch(err => {
                 console.warn('Fetch thất bại, chuyển sang iframe:', err);
@@ -101,7 +84,7 @@ function loadHeader() {
 function loadLayout() {
     const tasks = [loadHeader()];
     if (document.getElementById('footer')) {
-        tasks.push(injectPartial('footer', 'footer.html', 'footer-page.html'));
+        tasks.push(injectPartial('footer', 'footer.html', 'footer.html'));
     }
     return Promise.all(tasks).then(initFooter);
 }
@@ -121,23 +104,105 @@ function initFooter() {
 
 // 1. Tìm kiếm sản phẩm
 function executeSearch() {
+    let searchInput = document.getElementById("search-input");
+    
+    // NẾU CHẠY OFFLINE (IFRAME): Phải lách vào trong iframe Header để tìm ô input
+    if (!searchInput) {
+        const headerFrame = document.querySelector(".partial-frame--header");
+        if (headerFrame && headerFrame.contentDocument) {
+            searchInput = headerFrame.contentDocument.getElementById("search-input");
+        }
+    }
+    
+    if (!searchInput) return;
+    let query = searchInput.value.trim();
+    if (query !== "") {
+        window.location.href = "danh_muc.html?search=" + encodeURIComponent(query);
+    }
+}
 
-    const input =
-    document.getElementById("search-input");
+// 1.5 Hiển thị gợi ý tìm kiếm
+function showSuggestions(query) {
+    let suggestionsBox = document.getElementById("search-suggestions");
+    let inIframe = false;
+    
+    if (!suggestionsBox) {
+        const headerFrame = document.querySelector(".partial-frame--header");
+        if (headerFrame && headerFrame.contentDocument) {
+            suggestionsBox = headerFrame.contentDocument.getElementById("search-suggestions");
+            inIframe = true;
+        }
+    }
+    
+    if (!suggestionsBox) return;
 
-    if (!input) {
-        alert("Không tìm thấy ô tìm kiếm");
+    query = query.trim().toLowerCase();
+    if (query === "") {
+        suggestionsBox.style.display = "none";
         return;
     }
 
-    const query = input.value.trim();
+    if (typeof danhSachSanPham === 'undefined') return;
 
-    if (query) {
-        window.location.href =
-        "danh_muc.html?search=" +
-        encodeURIComponent(query);
+    let matches = danhSachSanPham.filter(sp => sp.ten.toLowerCase().includes(query));
+    
+    matches.sort((a, b) => {
+        let aStart = a.ten.toLowerCase().startsWith(query);
+        let bStart = b.ten.toLowerCase().startsWith(query);
+        if (aStart && !bStart) return -1;
+        if (!aStart && bStart) return 1;
+        return 0;
+    });
+    
+    if (matches.length === 0) {
+        suggestionsBox.innerHTML = '<div style="padding: 10px 15px; color: #777; font-size: 14px;">Không tìm thấy sản phẩm</div>';
+        suggestionsBox.style.display = "block";
+        return;
     }
+
+    matches = matches.slice(0, 5);
+    
+    suggestionsBox.innerHTML = "";
+    matches.forEach(sp => {
+        const giaMoi = sp.giaGoc * (100 - sp.phanTramGiam) / 100;
+        const item = document.createElement("a");
+        item.className = "search-suggestion-item";
+        item.href = "chitietsanpham.html?id=" + sp.id;
+        
+        if (inIframe) {
+            item.target = "_parent";
+        }
+        
+        item.innerHTML = `
+            <img src="${sp.hinhAnh}" alt="">
+            <div class="search-suggestion-info">
+                <span class="search-suggestion-name">${sp.ten}</span>
+                <span class="search-suggestion-price">${giaMoi.toLocaleString()}đ</span>
+            </div>
+        `;
+        suggestionsBox.appendChild(item);
+    });
+    
+    suggestionsBox.style.display = "block";
 }
+
+document.addEventListener("click", function(e) {
+    let suggestionsBox = document.getElementById("search-suggestions");
+    let searchInput = document.getElementById("search-input");
+    
+    if (!suggestionsBox && !searchInput) {
+        const headerFrame = document.querySelector(".partial-frame--header");
+        if (headerFrame && headerFrame.contentDocument) {
+            suggestionsBox = headerFrame.contentDocument.getElementById("search-suggestions");
+            searchInput = headerFrame.contentDocument.getElementById("search-input");
+        }
+    }
+
+    if (suggestionsBox && e.target !== searchInput && !suggestionsBox.contains(e.target)) {
+        suggestionsBox.style.display = "none";
+    }
+});
+
 // 2. Đăng ký nhận tin ở Footer
 function subscribeEmail() {
     let emailInput = document.getElementById('newsletter-email');
@@ -203,4 +268,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener('storage', function(e) {
     if(e.key === 'cart') updateCartCount();
+});
+
+// Resize iframe when dropdown shows
+window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'resizeHeader') {
+        const headerFrame = document.querySelector(".partial-frame--header");
+        if (headerFrame) {
+            headerFrame.style.height = e.data.height + "px";
+        }
+    }
 });

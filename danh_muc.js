@@ -1,4 +1,13 @@
-const perPage = 8;
+let perPage =
+window.innerWidth <= 768 ? 4 : 8;
+
+window.addEventListener("resize", () => {
+    perPage =
+    window.innerWidth <= 768 ? 4 : 8;
+
+    currentPage = 1;
+    renderProducts();
+});
 
 let currentPage = 1;
 
@@ -26,7 +35,6 @@ function loadProducts(){
             data-category="${sp.danhMuc}"
             data-brand="${sp.thuongHieu.toLowerCase()}"
             data-price="${giaMoi}"
-            data-search="${sp.ten.toLowerCase()} ${sp.thuongHieu.toLowerCase()} ${sp.danhMuc.toLowerCase()}"
         >
 
             <span class="sale">
@@ -71,6 +79,14 @@ function renderProducts(){
 
     const end =
     start + perPage;
+
+    const countText =
+    document.querySelector(".product-count");
+
+    if(countText){
+    countText.innerText =
+    `Hiển thị ${start + 1}-${Math.min(end, visibleCards.length)} / ${visibleCards.length} sản phẩm`;
+}
 
     visibleCards
     .slice(start, end)
@@ -137,15 +153,13 @@ function filterProducts(){
         const p =
         parseInt(card.dataset.price) / 1000;
 
-    if(window.searchFilterQuery){
+        if(window.searchFilterQuery){
+            const name = card.querySelector("h4").textContent.toLowerCase();
+            if(!name.includes(window.searchFilterQuery)){
+                hide = true;
+            }
+        }
 
-       const searchText =
-          card.dataset.search;
-       
-      if(!searchText.includes(window.searchFilterQuery)){
-        hide = true;
-       }
-}
         if(
             categories.length &&
             !categories.includes(card.dataset.category)
@@ -230,8 +244,8 @@ function loadCategoryFromUrl() {
 
     const params = new URLSearchParams(window.location.search);
 
-    console.log("URL =", window.location.href);
-    console.log("SEARCH =", params.get("search"));
+    const category = params.get("category");
+    const searchParam = params.get("search");
 
     if (searchParam) {
         window.searchFilterQuery = searchParam.toLowerCase();
@@ -284,7 +298,5 @@ window.addEventListener("load", () => {
     loadProducts();
 
     loadCategoryFromUrl();
-
-    filterProducts();
 
 });

@@ -13,11 +13,12 @@ body{
 }
 
 
-.container{
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+.container,
+.nav-container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 15px;
 }
 
 
@@ -39,12 +40,6 @@ body{
     gap: 30px;
 }
 
-.header-container{
-    width:100%;
-    max-width:1200px;
-    margin:0 auto;
-    padding:0 15px;
-}
 
 .logo{
     display: flex;
@@ -85,7 +80,7 @@ body{
     display: flex;
     border: 1px solid #F1D7DF;
     border-radius: 50px;
-    overflow: hidden;
+    position: relative;
 }
 
 .search-box input{
@@ -93,6 +88,7 @@ body{
     padding: 13px 20px;
     border: none;
     outline: none;
+    border-radius: 50px 0 0 50px;
 }
 
 .search-box button{
@@ -103,10 +99,76 @@ body{
     cursor: pointer;
     font-size: 18px;
     transition: 0.3s;
+    border-radius: 0 50px 50px 0;
 }
 
 .search-box button:hover{
     background: #F1D7DF;
+}
+
+/* SEARCH SUGGESTIONS DROPDOWN */
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #F1D7DF;
+    border-radius: 10px;
+    z-index: 9999;
+    max-height: 350px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.search-suggestion-item {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s;
+}
+
+.search-suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.search-suggestion-item:hover {
+    background-color: #FCE6EC;
+}
+
+.search-suggestion-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+.search-suggestion-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-suggestion-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.search-suggestion-price {
+    font-size: 13px;
+    color: #e74c3c;
+    font-weight: 600;
+    margin-top: 4px;
 }
 
 .header-icons{
@@ -353,18 +415,6 @@ body{
     font-size:13px;
 }
 
-@media(max-width:900px){
-    .footer-container{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:600px){
-    .footer-container{
-        grid-template-columns:1fr;
-    }
-}
-
 .cart-icon-wrapper {
     position: relative;
     display: inline-flex;
@@ -393,14 +443,99 @@ a:hover {
     text-decoration: none !important;
 }
 
-iframe.partial-frame--footer, 
-#footer iframe {
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    height: 430px !important;     /* Số px hoàn hảo cho layout này */
-    min-height: 430px !important;
-    display: block !important;
-    border: none !important;
-    background-color: #ffffff !important; 
+iframe.partial-frame--footer,
+#footer iframe{
+    width:100% !important;
+    display:block !important;
+    border:none !important;
+}
+@media (max-width:768px){
+
+    .header-top{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .logo{
+        width:100%;
+        justify-content:center;
+    }
+
+    .search-box{
+        width:100%;
+        max-width:100%;
+        order:2;
+    }
+
+    .header-icons{
+        width:100%;
+        justify-content:space-around;
+        order:3;
+    }
+
+    .icon-text{
+        display:none;
+    }
+
+    .nav-menu{
+        display:flex;
+        justify-content:center;
+        gap:10px;
+        padding:10px 5px;
+        flex-wrap:nowrap;
+    }
+
+    .nav-menu a{
+        font-size:10px;
+        white-space:nowrap;
+        margin:0;
+    }
+
+    .nav-menu::-webkit-scrollbar{
+        display:none;
+    }
+    .mobile-hide{
+        display:none;
+    }
+
+    .footer{
+        margin-top:20px;
+        padding:20px 0;
+    }
+
+     .footer-container{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:20px;
+    }
+
+    .footer-logo{
+        width:80px;
+    }
+
+    .footer-desc,
+    .footer-col a{
+        font-size:11px;
+        line-height:1.4;
+    }
+
+    .footer-col h3{
+        font-size:12px;
+        margin-bottom:10px;
+    }
+
+    .social{
+        gap:6px;
+    }
+
+    .social a{
+        width:26px;
+        height:26px;
+        font-size:12px;
+    }
+
+    .newsletter{
+        display:none;
+    }
+
 }

@@ -1,4 +1,14 @@
-const perPage = 8;
+let perPage =
+window.innerWidth <= 768 ? 4 : 8;
+
+window.addEventListener("resize", () => {
+
+    perPage =
+    window.innerWidth <= 768 ? 4 : 8;
+
+    currentPage = 1;
+    renderProducts();
+});
 
 let currentPage = 1;
 
