@@ -64,20 +64,43 @@ document.getElementById("orderTotal").innerText =
 finalTotal.toLocaleString() + "đ";
 
 function datHang() {
-    const fullname = document.getElementById("fullname").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const address = document.getElementById("address").value.trim();
+     const currentCart =
+    JSON.parse(localStorage.getItem("cart")) || [];
 
-    if (!fullname || !phone || !email || !address || !province.value || !district.value || !ward.value) {
+    if(currentCart.length === 0){
+
+        alert("Giỏ hàng đang trống!");
+
+        window.location.href = "gio_hang.html";
+
+        return;
+    }
+
+    const fullname =
+    document.getElementById("fullname").value.trim();
+
+    const phone =
+    document.getElementById("phone").value.trim();
+
+    const email =
+    document.getElementById("email").value.trim();
+
+    const address =
+    document.getElementById("address").value.trim();
+
+    if(
+        !fullname ||
+        !phone ||
+        !email ||
+        !address ||
+        !province.value ||
+        !district.value ||
+        !ward.value
+    ){
         alert("Vui lòng nhập đầy đủ thông tin nhận hàng!");
         return;
     }
 
-    if (cart.length === 0) {
-        alert("Giỏ hàng đang trống!");
-        return;
-    }
 
     // TẠO MÃ ĐƠN HÀNG DUY NHẤT
     const orderCode = Date.now(); 
