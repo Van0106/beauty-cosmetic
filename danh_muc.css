@@ -408,4 +408,16 @@ color:#fff;
         height:32px;
         font-size:11px;
     }
+
+     .pagination button{
+        appearance:none;
+        -webkit-appearance:none;
+        color:#000;
+    }
+
+    .sort{
+        appearance:none;
+        -webkit-appearance:none;
+        color:#000;
+    }
 }

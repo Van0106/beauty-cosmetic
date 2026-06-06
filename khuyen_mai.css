@@ -261,4 +261,16 @@ RESPONSIVE
         height:38px;
         font-size:13px;
     }
+
+     .pagination button{
+        appearance:none;
+        -webkit-appearance:none;
+        color:#000;
+    }
+
+    .sort{
+        appearance:none;
+        -webkit-appearance:none;
+        color:#000;
+    }
 }
