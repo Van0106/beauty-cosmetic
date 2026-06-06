@@ -59,9 +59,14 @@
                      id="newsletter-email"
                      placeholder="Nhập email của bạn"
                 >
-              <button onclick="subscribeEmail()" class="newsletter-btn">
-                     <i class='bx bx-send'></i>
-                </button>
+              <button
+                type="button"
+                class="newsletter-btn"
+                onclick="
+                document.getElementById('newsletter-message').innerHTML='Đăng ký thành công 💖';
+                document.getElementById('newsletter-message').style.color='#E85D8E';">
+                    <i class='bx bx-send'></i>
+              </button>
            </div>
             <p id="newsletter-message"></p>
         </div>

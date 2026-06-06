@@ -224,13 +224,13 @@ function subscribeEmail() {
 
     if (email === '') {
         message.textContent = 'Vui lòng nhập email';
-        message.style.color = 'red'; // Ép chữ màu đỏ
+        message.style.color = 'red'; 
     } else if (!pattern.test(email)) {
         message.textContent = 'Email không hợp lệ';
         message.style.color = 'red';
     } else {
         message.textContent = 'Đăng ký thành công 💖';
-        message.style.color = 'green'; // Ép chữ màu xanh
+        message.style.color = '#E85D8E'; 
         emailInput.value = '';
     }
 }
