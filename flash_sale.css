@@ -308,6 +308,13 @@
     .product-card h3{
         font-size:13px;
         line-height:1.4;
-        min-height:36px;
+
+        height:auto;
+        min-height:72px;
+
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:4;
+        overflow:hidden;
     }
 }
