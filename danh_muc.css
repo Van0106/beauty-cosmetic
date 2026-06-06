@@ -1,14 +1,16 @@
 .promo-banner{
-    max-width:1400px;
-    margin:20px auto;
-    padding:0 20px;
+    max-width:1200px;
+    margin:30px auto 40px;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
 }
 
 .promo-banner img{
     width:100%;
-    height:300px;   /* giảm chiều cao */
+    height:470px;
     object-fit:cover;
-    border-radius:25px;
+    display:block;
 }
 
 *{
