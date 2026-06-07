@@ -283,3 +283,59 @@ district.addEventListener(
     }
 );
 
+const paymentInfo =
+document.getElementById("paymentInfo");
+
+document
+.querySelectorAll('input[name="paymentMethod"]')
+.forEach(radio => {
+
+    radio.addEventListener("change", function(){
+
+        if(this.value === "bank"){
+
+            paymentInfo.innerHTML = `
+                <div class="payment-box">
+                    <h6>Thông tin chuyển khoản</h6>
+
+                    <p>
+                        Ngân hàng: MB Bank
+                    </p>
+
+                    <p>
+                        STK: 123456789
+                    </p>
+
+                    <p>
+                        Chủ TK: NGUYEN THI THANH VAN
+                    </p>
+                </div>
+            `;
+        }
+
+        else if(this.value === "momo"){
+
+            paymentInfo.innerHTML = `
+                <div class="payment-box">
+                    <h6>Thanh toán MoMo</h6>
+
+                    <p>
+                        SĐT MoMo: 0868515565
+                    </p>
+
+                    <p>
+                        Chủ TK: Nguyễn Thị Thanh Vân
+                    </p>
+                </div>
+            `;
+        }
+
+        else{
+
+            paymentInfo.innerHTML = "";
+        }
+
+    });
+
+});
+
