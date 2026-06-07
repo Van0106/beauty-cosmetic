@@ -42,7 +42,7 @@ function checkOrder() {
     // 3. Tạo nút bấm
     foundOrders.forEach((order) => {
         let btn = document.createElement("button");
-        btn.className = "order-item-btn"; // Dùng class CSS tớ đã chỉ cách thêm trước đó
+        btn.className = "order-item-btn"; 
         btn.style.cssText = "display:block; width:100%; padding:10px; margin-bottom:5px; cursor:pointer; background:#fff; border:1px solid #f292b1; border-radius:8px;";
         btn.innerText = `Đơn hàng: ${order.code} - Ngày: ${order.date}`;
         

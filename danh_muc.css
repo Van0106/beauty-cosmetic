@@ -53,7 +53,7 @@ display:block;
 width:260px;
 background:#fff;
 padding:30px;
-border-radius:22px;
+border-radius:22px; 
 box-shadow:0 8px 30px rgba(0,0,0,.04);
 flex-shrink:0;
 }
@@ -61,7 +61,7 @@ flex-shrink:0;
 .sidebar h3{
 font-size:18px;
 color:#E86A92;
-margin-bottom:20px;
+margin-bottom:20px; 
 }
 
 .filter{

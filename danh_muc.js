@@ -240,34 +240,6 @@ function sortProducts() {
     renderProducts();
 }
 
-function loadCategoryFromUrl() {
-
-    const params = new URLSearchParams(window.location.search);
-
-    const category = params.get("category");
-    const searchParam = params.get("search");
-
-    if (searchParam) {
-        window.searchFilterQuery = searchParam.toLowerCase();
-        
-        let headerTitle = document.querySelector(".section-title h2");
-        if(headerTitle) headerTitle.innerText = "KẾT QUẢ TÌM KIẾM: " + searchParam;
-    }
-
-    if (!category && !searchParam) return;
-
-    if (category) {
-        const checkbox = document.querySelector(
-            `.category[value="${category}"]`
-        );
-
-        if (checkbox) {
-            checkbox.checked = true;
-        }
-    }
-    
-    filterProducts();
-}
 
 document.querySelectorAll('input[name="price"]').forEach(radio => {
 
