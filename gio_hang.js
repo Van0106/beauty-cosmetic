@@ -52,7 +52,7 @@ function loadCart(){
     body.innerHTML = html;
 
     // phí ship
-    let shipping = subtotal >= 500000 ? 0 : 30000;
+    let shipping = 0;
     let total = subtotal + shipping;
 
     document.getElementById("subtotal").innerText = subtotal.toLocaleString() + "đ";
