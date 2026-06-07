@@ -1,33 +1,29 @@
-﻿/* =========================
-   TIÊU ĐỀ KHỐI SẢN PHẨM - GIỐNG TRANG LIÊN HỆ
-   ========================= */
-
-.section-title {
+﻿.section-title {
     display: flex;
-    flex-direction: column;    /* Chuyển thành hàng dọc để đưa mọi thứ vào giữa */
+    flex-direction: column;    
     justify-content: center;
-    align-items: center;       /* Căn giữa chữ h2 và chữ xem tất cả */
+    align-items: center;       
     text-align: center;
-    margin-bottom: 40px;       /* Khoảng cách xuống lưới sản phẩm bên dưới */
+    margin-bottom: 40px;      
 }
 
 .section-title h2 {
-    font-size: 32px;           /* ĐÃ SỬA: Bằng kích thước trang liên hệ */
-    font-weight: 700;          /* ĐÃ SỬA: In đậm hoàn toàn giống trang liên hệ */
-    color: #e85d8a;            /* ĐÃ SỬA: Đúng màu hồng chuẩn của trang liên hệ */
-    margin: 0 0 10px 0;        /* Khoảng cách dưới chữ h2 */
+    font-size: 32px;           
+    font-weight: 700;          
+    color: #e85d8a;           
+    margin: 0 0 10px 0;       
 }
 
 .section-title a {
     text-decoration: none;
     color: #777;
-    font-size: 15px;           /* Chữ "Xem tất cả" nhỏ gọn nằm ngay bên dưới */
+    font-size: 15px;           
     font-weight: 500;
     transition: 0.3s;
 }
 
 .section-title a:hover {
-    color: #e85d8a;            /* Di chuột vào chữ "Xem tất cả" sẽ đổi sang hồng đậm */
+    color: #e85d8a;            
 }
 
 .product-card button{
@@ -123,7 +119,7 @@
     }
 
     .product-card{
-        min-width:170px; /* hoặc 180px */
+        min-width:170px; 
         flex-shrink:0;
         scroll-snap-align:start;
     }
