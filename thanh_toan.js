@@ -291,7 +291,20 @@ document
 .forEach(radio => {
 
     radio.addEventListener("change", function(){
+    const phoneInput =
+    document.getElementById("phone");
 
+    phoneInput.addEventListener("input", () => {
+
+    const transferContent =
+    document.getElementById("transferContent");
+
+    if(transferContent){
+        transferContent.innerText =
+        phoneInput.value || "Nhập SĐT trước";
+    }
+
+});
         if(this.value === "bank"){
 
             paymentInfo.innerHTML = `
@@ -307,8 +320,14 @@ document
                     </p>
 
                     <p>
-                        Chủ TK: NGUYEN THI THANH VAN
+                        Chủ TK: NGUYEN THI THANH VAN    
                     </p>
+                    <div class="transfer-note">
+                       <span>Nội dung chuyển khoản</span>
+                       <strong id="transferContent">
+                           ${document.getElementById("phone").value.trim() || "Nhập SĐT trước"}
+                       </strong>
+                    </div>
                 </div>
             `;
         }
@@ -326,6 +345,12 @@ document
                     <p>
                         Chủ TK: Nguyễn Thị Thanh Vân
                     </p>
+                    <div class="transfer-note">
+                       <span>Nội dung chuyển khoản</span>
+                       <strong id="transferContent">
+                           ${document.getElementById("phone").value.trim() || "Nhập SĐT trước"}
+                       </strong>
+                    </div>
                 </div>
             `;
         }
