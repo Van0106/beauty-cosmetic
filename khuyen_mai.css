@@ -221,6 +221,18 @@ RESPONSIVE
         padding:10px;
     }
 
+    .promo-banner{
+        width:100%;
+        max-width:100%;
+        overflow:hidden;
+    }
+
+    .promo-banner img{
+        width:100%;
+        height:auto;
+        border-radius:15px;
+    }
+
     .sidebar{
         width:100%;
         padding:15px;
@@ -229,12 +241,6 @@ RESPONSIVE
     .grid{
         grid-template-columns:repeat(2,1fr);
         gap:12px;
-    }
-
-        .promo-banner{
-        width:100%;
-        max-width:100%;
-        overflow:hidden;
     }
     .promo-card{
         min-height:auto;
