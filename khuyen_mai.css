@@ -283,6 +283,6 @@ RESPONSIVE
     .sort{
         appearance:none;
         -webkit-appearance:none;
-        color:#000;
+        color:#000; 
     }
 }

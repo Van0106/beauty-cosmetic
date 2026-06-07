@@ -49,7 +49,7 @@ cart.forEach(item => {
     `;
 });
 
-const shipping =0;
+const shipping = total >=500000 ? 0 :30000; 
 
 const finalTotal =
 total + shipping;
